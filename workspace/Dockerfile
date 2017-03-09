@@ -374,6 +374,14 @@ RUN if [ ${INSTALL_LINUXBREW} = true ]; then \
     echo 'export LD_LIBRARY_PATH="$LINUXBREWHOME/lib64:$LINUXBREWHOME/lib:$LD_LIBRARY_PATH"' >> ~/.bashrc \
 ;fi
 
+####
+# ffmpeg && ffprobe
+####
+RUN add-apt-repository -y ppa:mc3man/trusty-media
+#RUN apt-get --ignore-missing update
+RUN apt-get install -y ffmpeg
+
+
 #
 #--------------------------------------------------------------------------
 # Final Touch
