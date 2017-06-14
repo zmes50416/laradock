@@ -364,7 +364,7 @@ RUN if [ ${INSTALL_LINUXBREW} = true ]; then \
     git clone https://github.com/Homebrew/linuxbrew.git ~/.linuxbrew && \
 
     echo "" >> ~/.bashrc && \
-    echo 'export PKG_CONFIG_PATH"=/usr/local/lib/pkgconfig:/usr/local/lib64/pkgconfig:/usr/lib64/pkgconfig:/usr/lib/pkgconfig:/usr/lib/x86_64-linux-gnu/pkgconfig:/usr/lib64/pkgconfig:/usr/share/pkgconfig:$PKG_CONFIG_PATH"' >> ~/.bashrc && \
+    echo 'export PKG_CONFqIG_PATH"=/usr/local/lib/pkgconfig:/usr/local/lib64/pkgconfig:/usr/lib64/pkgconfig:/usr/lib/pkgconfig:/usr/lib/x86_64-linux-gnu/pkgconfig:/usr/lib64/pkgconfig:/usr/share/pkgconfig:$PKG_CONFIG_PATH"' >> ~/.bashrc && \
 
     # Setup linuxbrew
     echo 'export LINUXBREWHOME="$HOME/.linuxbrew"' >> ~/.bashrc && \
@@ -377,8 +377,7 @@ RUN if [ ${INSTALL_LINUXBREW} = true ]; then \
 ####
 # ffmpeg && ffprobe
 ####
-RUN add-apt-repository -y ppa:mc3man/trusty-media
-#RUN apt-get --ignore-missing update
+RUN apt-get update
 RUN apt-get install -y ffmpeg
 
 
